@@ -1,0 +1,63 @@
+#include <iostream>
+using namespace std;
+class calculator {
+private:
+    int n1, n2;
+public :
+    calculator(double a, double b) {
+        n1 = a;
+        n2 = b;
+    }
+    void setNumbers(double a,double b){
+        n1 = a;
+        n2 = b;
+    }
+    double add(){
+        return n1 + n2;
+    }
+    double subtract() {
+        return n1 - n2;
+    }
+    double multiply() {
+        return n1 * n2;
+    }
+    double division() {
+        if (n2 == 0) {
+            cout << "error" << endl;
+            return 0;
+        }
+        else {
+            return n1 / n2;
+        }
+    }
+};
+
+int main(){
+    double a , b;
+    int choice;
+    cout << "enter number 1" << endl;
+    cin >> a;
+    cout << "enter number 2" << endl;
+    cin >> b;
+    calculator calc(a, b);
+    cout << "enter choice:" << endl;
+    cin >> choice;
+    switch (choice) {
+    case 1:
+        cout << calc.add() << endl;
+        break;
+    case 2 :
+        cout << calc.subtract ()<< endl;
+        break;
+    case 3 :
+        cout << calc.multiply() << endl;
+        break;
+    case 4:
+        cout << calc.division() << endl;
+        break;
+    default:
+        cout << "invalid operation" << endl;
+    }
+    return 0;
+}
+
